@@ -66,5 +66,24 @@ public class CompraWS {
         return list;
     }
     
-    
+    @Path("/createPedido")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<Pedido> createPedido(Pedido pedido){
+        SqlSession conn = MyBatisUtil.getSession();
+        conn.insert("Pedido.createPedido", pedido );
+        System.out.println("record inserted successfully");
+        conn.commit();
+        List<Pedido> list = null;
+        
+        try {
+            list = conn.selectList("Pedido.getAllPedido");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            conn.close();
+        }
+        return list;
+    }
 }

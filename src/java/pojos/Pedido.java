@@ -14,8 +14,7 @@ public class Pedido {
     private int idProducto;
     private int cantidad;
 
-    public Pedido(int idPedido, int idProducto, int cantidad) {
-        this.idPedido = idPedido;
+    public Pedido(int idProducto, int cantidad) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
     }
