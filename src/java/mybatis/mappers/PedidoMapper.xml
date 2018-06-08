@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Pedido">
+    <select id="getAllPedido" resultType = "pojos.Pedido" >
+        SELECT * FROM pedidos
+    </select>
+    <insert id="createPedido" paramaterType = "pojos.Pedido">
+        INSERT INTO pedidos(idProducto, cantidad) Values(#{})
+    </insert>
+   
+    
+</mapper>
